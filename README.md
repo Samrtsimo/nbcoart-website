@@ -22,29 +22,31 @@
 | 地址 | No. 49, XingYu New Village, Jingshanzhong Road, Yinzhou Zone, Ningbo, Zhejiang, China 315000 |
 | 服务 | 与艺术家合作 3D 设计 · 工厂对接 · 定制生产 · 质量检验 · 海运/空运交付 |
 
-## 网站结构（13 页，纯英文，现代艺术风格）
+## 网站结构（21 页，纯英文，现代艺术风格）
 
 | 页面 | 内容 |
 |------|------|
-| `index.html` | 首页：Hero 轮播 + 品牌语 + 简介 + 精选雕塑 + 服务 + 新闻 + CTA |
+| `index.html` | 首页：Hero 轮播 + 品牌语 + 简介(实拍图轮播) + 精选雕塑 + 服务 + 新闻 + CTA |
 | `products.html` | 7 大分类总览 + 电子画册下载区 |
-| `{category}.html` × 7 | 每类产品的图库（型号 + 价格 + 询价）|
-| `original-design.html` | 原创设计 |
-| `news.html` | 新闻 / 项目 case 6 篇 |
+| `{category}.html` × 7 | 每类产品的图库（型号 + 价格 + 询价）；金属页带 6 子分类筛选 |
+| `original-design.html` | 原创设计（独立一级导航）|
+| `news.html` | 新闻 list（7 篇，可点进详情）|
+| `{id}-article.html` × 7 | 新闻/项目详情页（标题 + 日期 + 配图）|
+| `catalogue.html` | 电子画册下载（独立一级导航）|
 | `about.html` | 公司简介 + David Chen |
 | `contact.html` | 联系方式 + Web3Forms 询盘表单 |
 
-## 7 类雕塑产品（49 款，已录产品图；2026-08 移除 Art Door 系列）
+## 7 类雕塑产品（78 款；2026-08 移除 Art Door 系列，补齐 Metal 子分类）
 
 | 分类 | 数量 |
 |------|------|
-| Metal Sculpture 金属雕塑 | 24 |
-| Fiberglass Sculpture 玻璃钢 | 6 |
+| Metal Sculpture 金属雕塑 | 49（6 子分类：不锈钢28/铜青铜5/耐候钢4/灯光3/喷泉5/火焰4）|
+| Fiberglass Sculpture 玻璃钢 | 8 |
 | Stone Sculpture 石雕 | 1 |
 | Wax & Silicone 蜡像硅胶 | 1 |
 | Wood Sculpture 木雕 | 2 |
 | Light Lantern Sculpture 灯彩 | 3 |
-| Art Furniture 艺术家具 | 6 |
+| Art Furniture 艺术家具 | 8 |
 | Original Design 原创设计 | 6 |
 
 ## 电子画册下载

@@ -37,7 +37,7 @@
       + '</div>'
       + '<div class="product-body">'
       + '<h3>' + esc(p.name) + '</h3>'
-      + '<div class="product-model">' + esc(p.model || (p.category_name || 'Sculpture')) + '</div>'
+      + '<div class="product-model">' + esc(p.subcategory || p.model || (p.category_name || 'Sculpture')) + '</div>'
       + '<div class="product-foot">'
       + '<div class="price">' + fmtPrice(p) + '</div>'
       + '<div class="card-actions">'
@@ -78,14 +78,38 @@
     }).join('');
   }
 
-  // ---- 3. Per-category product grid ----
+  // ---- 3. Per-category product grid (with metal subcategory filter) ----
   var grid = document.getElementById('product-grid');
   if (grid) {
     var cat = grid.getAttribute('data-category');
     var list = D.products.filter(function (p) { return p.category === cat; });
+    var cntEl = document.querySelector('[data-count="' + cat + '"]');
+    if (cntEl) cntEl.textContent = list.length + ' designs';
+
+    // sub-category tabs (metal only)
+    var tabsHost = document.getElementById('subcat-tabs');
+    var activeSub = '';
+    if (tabsHost && D.subcategories && D.subcategories[cat]) {
+      var subs = D.subcategories[cat];
+      var btnHtml = ['<button class="subcat-btn active" data-sub="">All</button>'].concat(
+        subs.map(function (s) {
+          var n = list.filter(function (p) { return p.subcategory === s; }).length;
+          return '<button class="subcat-btn" data-sub="' + esc(s) + '">' + esc(s) + ' (' + n + ')</button>';
+        })).join('');
+      tabsHost.innerHTML = btnHtml;
+      tabsHost.querySelectorAll('.subcat-btn').forEach(function (b) {
+        b.addEventListener('click', function () {
+          activeSub = b.getAttribute('data-sub');
+          tabsHost.querySelectorAll('.subcat-btn').forEach(function (x) { x.classList.remove('active'); });
+          b.classList.add('active');
+          var filtered = activeSub ? list.filter(function (p) { return p.subcategory === activeSub; }) : list;
+          renderInto('#product-grid', filtered);
+          var bar = document.getElementById('grid-count');
+          if (bar) bar.textContent = filtered.length + ' designs';
+        });
+      });
+    }
     renderInto('#product-grid', list);
-    var cnt = document.querySelector('[data-count="' + cat + '"]');
-    if (cnt) cnt.textContent = list.length + ' designs';
     var bar = document.getElementById('grid-count');
     if (bar) bar.textContent = list.length + ' designs';
   }
@@ -117,12 +141,22 @@
     bind('hero-prev', -1); bind('hero-next', 1);
   }
 
-  // ---- 6. About carousel (optional single image via data/products) ----
-  var aboutImg = document.getElementById('about-photo');
-  var aboutPool = [];
-  D.products.forEach(function (p) { if (p.model === 'CAS-AS35' || p.model === '3577548') aboutPool.push(p.img); });
-  if (aboutImg && aboutPool.length) {
-    aboutImg.setAttribute('src', aboutPool[0]);
+  // ---- 6. About: production-photo carousel (arrows + click to lightbox) ----
+  var aboutCar = document.getElementById('about-carousel');
+  var aboutImg = document.getElementById('about-carousel-img');
+  var pool = (D.production && D.production.length) ? D.production.slice() : [];
+  if (aboutCar && aboutImg && pool.length) {
+    var ai = 0, at;
+    function aboutSet(n) {
+      ai = (n + pool.length) % pool.length;
+      aboutImg.src = pool[ai];
+    }
+    function aboutRestart() { if (at) clearInterval(at); if (pool.length > 1) at = setInterval(function () { aboutSet(ai + 1); }, 3800); }
+    aboutSet(0); aboutRestart();
+    var ap = document.getElementById('about-prev'), an = document.getElementById('about-next');
+    if (ap) ap.addEventListener('click', function (e) { e.stopPropagation(); aboutSet(ai - 1); aboutRestart(); });
+    if (an) an.addEventListener('click', function (e) { e.stopPropagation(); aboutSet(ai + 1); aboutRestart(); });
+    aboutImg.addEventListener('click', function () { openLightbox(pool[ai], ''); });
   }
 
   // ---- 7. Lightbox ----
