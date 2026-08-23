@@ -1,0 +1,11 @@
+# OS / editor
+Thumbs.db
+.DS_Store
+*.psd
+*.psb
+node_modules/
+
+# local build scripts (not part of the site)
+*.pyc
+__pycache__/
+build_*.py
