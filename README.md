@@ -22,19 +22,19 @@
 | 地址 | No. 49, XingYu New Village, Jingshanzhong Road, Yinzhou Zone, Ningbo, Zhejiang, China 315000 |
 | 服务 | 与艺术家合作 3D 设计 · 工厂对接 · 定制生产 · 质量检验 · 海运/空运交付 |
 
-## 网站结构（14 页，纯英文，现代艺术风格）
+## 网站结构（13 页，纯英文，现代艺术风格）
 
 | 页面 | 内容 |
 |------|------|
 | `index.html` | 首页：Hero 轮播 + 品牌语 + 简介 + 精选雕塑 + 服务 + 新闻 + CTA |
-| `products.html` | 8 大分类总览 |
-| `{category}.html` × 8 | 每类产品的图库（型号 + 价格 + 询价）|
+| `products.html` | 7 大分类总览 + 电子画册下载区 |
+| `{category}.html` × 7 | 每类产品的图库（型号 + 价格 + 询价）|
 | `original-design.html` | 原创设计 |
 | `news.html` | 新闻 / 项目 case 6 篇 |
 | `about.html` | 公司简介 + David Chen |
 | `contact.html` | 联系方式 + Web3Forms 询盘表单 |
 
-## 8 类雕塑产品（53 款，已录产品图）
+## 7 类雕塑产品（49 款，已录产品图；2026-08 移除 Art Door 系列）
 
 | 分类 | 数量 |
 |------|------|
@@ -45,8 +45,12 @@
 | Wood Sculpture 木雕 | 2 |
 | Light Lantern Sculpture 灯彩 | 3 |
 | Art Furniture 艺术家具 | 6 |
-| Art Door 艺术门 | 4 |
 | Original Design 原创设计 | 6 |
+
+## 电子画册下载
+
+- `assets/catalogues/Coart-Sculpture-Catalogue-2026.pdf`（24.3 MB，2026 版）
+- 下载入口：`products.html` 的 "Browse the full COART e-catalogue" 区 + 每页页脚 "E-Catalogue"
 
 ## 技术要点
 

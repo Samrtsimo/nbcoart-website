@@ -62,15 +62,6 @@ window.NBCOART = {
       "count": 6,
       "img": "assets/images/products/art-furniture/CAS-JW05.jpg",
       "tag": "Bespoke · sculptural"
-    },
-    {
-      "id": "art-door",
-      "name": "Art Door",
-      "page": "art-door.html",
-      "icon": "🚪",
-      "count": 4,
-      "img": "assets/images/products/art-door/COD-M6007.jpg",
-      "tag": "Armoured · art entrance"
     }
   ],
   "products": [
@@ -503,46 +494,6 @@ window.NBCOART = {
       "price": "$ 19500.00",
       "desc": "CAS-JS02",
       "img": "assets/images/products/art-furniture/CAS-JS02.jpg"
-    },
-    {
-      "id": "939470",
-      "category": "art-door",
-      "category_name": "Art Door",
-      "name": "Lucky rhombus design modern entrance metal door",
-      "model": "COD-M6007",
-      "price": "$ 491.00",
-      "desc": "COD-M6007",
-      "img": "assets/images/products/art-door/COD-M6007.jpg"
-    },
-    {
-      "id": "939469",
-      "category": "art-door",
-      "category_name": "Art Door",
-      "name": "Wave Design Modern Art Entrance Metal Security Armoured Door",
-      "model": "COD-M6006",
-      "price": "$ 491.00",
-      "desc": "COD-M6006",
-      "img": "assets/images/products/art-door/COD-M6006.jpg"
-    },
-    {
-      "id": "939468",
-      "category": "art-door",
-      "category_name": "Art Door",
-      "name": "Luck fish design armoured metal art entrance door",
-      "model": "COD-M6003",
-      "price": "$ 491.00",
-      "desc": "COD-M6003",
-      "img": "assets/images/products/art-door/COD-M6003.jpg"
-    },
-    {
-      "id": "938863",
-      "category": "art-door",
-      "category_name": "Art Door",
-      "name": "chinese style lucky happiness Magic Gourd deer double open armoured entrance art metal door",
-      "model": "COD-M001",
-      "price": "$ 491.00",
-      "desc": "COD-M001",
-      "img": "assets/images/products/art-door/COD-M001.jpg"
     },
     {
       "id": "1028179",
