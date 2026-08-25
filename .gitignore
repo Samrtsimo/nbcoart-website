@@ -1,9 +1,13 @@
 # OS / editor
 Thumbs.db
 .DS_Store
+desktop.ini
+Thumbs.db
 *.psd
 *.psb
 node_modules/
+# office temp/lock files
+~$*
 
 # 3D design source models (added by designer, not site assets)
 *.obj
@@ -16,6 +20,10 @@ node_modules/
 *.dwg
 *.dxf
 *.skp
+
+# client source workbooks / technical sheets (not site assets)
+*.xlsx
+assets/images/products/**/*.pdf
 
 # local build scripts (not part of the site)
 *.pyc
