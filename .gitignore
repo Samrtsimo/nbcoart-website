@@ -5,6 +5,18 @@ Thumbs.db
 *.psb
 node_modules/
 
+# 3D design source models (added by designer, not site assets)
+*.obj
+*.mtl
+*.fbx
+*.stl
+*.max
+*.3ds
+*.blend
+*.dwg
+*.dxf
+*.skp
+
 # local build scripts (not part of the site)
 *.pyc
 __pycache__/

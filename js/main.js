@@ -29,19 +29,27 @@
   var byId = {};
   D.products.forEach(function (p) { byId[p.id] = p; });
 
+  // clean a scraped description; hide layout/nav junk so the detail view reads well
+  function cleanDesc(p) {
+    if (!p || !p.desc) return '';
+    var d = String(p.desc).replace(/\s+/g, ' ').trim();
+    if (d.length < 12) return '';
+    if (/scd-maintenance|Home Home Products|Products\s+Products/i.test(d)) return '';
+    return d;
+  }
   function productCard(p) {
     return '<article class="product-card">'
-      + '<div class="product-thumb"><button class="view" style="border:0;padding:0;background:none;width:100%;height:100%" data-img="' + esc(p.img) + '" data-name="' + esc(p.name) + '">'
+      + '<div class="product-thumb"><button class="pd-open" style="border:0;padding:0;background:none;width:100%;height:100%" data-id="' + esc(p.id) + '" aria-label="View details">'
       + '<img loading="lazy" src="' + esc(p.img) + '" alt="' + esc(p.name) + '"></button>'
       + (p.model ? '<span class="product-tag">' + esc(p.model) + '</span>' : '')
       + '</div>'
       + '<div class="product-body">'
-      + '<h3>' + esc(p.name) + '</h3>'
+      + '<h3 class="pd-open" data-id="' + esc(p.id) + '">' + esc(p.name) + '</h3>'
       + '<div class="product-model">' + esc(p.subcategory || p.model || (p.category_name || 'Sculpture')) + '</div>'
       + '<div class="product-foot">'
       + '<div class="price">' + fmtPrice(p) + '</div>'
       + '<div class="card-actions">'
-      + '<button class="gbtn view" data-img="' + esc(p.img) + '" data-name="' + esc(p.name) + '">View</button>'
+      + '<button class="gbtn pd-open" data-id="' + esc(p.id) + '">Details</button>'
       + '<a class="gbtn inquiry-btn" href="' + waLink(p) + '" target="_blank" rel="noopener">Get Price</a>'
       + '</div></div></div></article>';
   }
@@ -50,22 +58,23 @@
     var host = document.querySelector(sel);
     if (!host) return;
     host.innerHTML = list.map(productCard).join('');
-    host.querySelectorAll('.view').forEach(function (b) {
+    host.querySelectorAll('.pd-open').forEach(function (b) {
       b.addEventListener('click', function () {
-        openLightbox(b.getAttribute('data-img'), b.getAttribute('data-name') || '');
+        openDetail(b.getAttribute('data-id'));
       });
     });
   }
 
   // ---- 1. Category overview cards (products.html) ----
+  function catCount(cid) { return D.products.filter(function (p) { return p.category === cid; }).length; }
   var catGrid = document.getElementById('category-cards');
   if (catGrid && D.categories.length) {
-    catGrid.innerHTML = D.categories.filter(function (c) { return c.count > 0; }).map(function (c) {
+    catGrid.innerHTML = D.categories.filter(function (c) { return catCount(c.id) > 0; }).map(function (c) {
       return '<a class="cat-card" href="' + esc(c.page) + '">'
         + '<img loading="lazy" src="' + esc(c.img) + '" alt="' + esc(c.name) + '">'
         + '<span class="cc-arrow">→</span>'
         + '<div class="cc-overlay"><h3>' + esc(c.name) + '</h3>'
-        + '<span class="cc-count">' + c.count + ' designs</span></div></a>';
+        + '<span class="cc-count">' + catCount(c.id) + ' designs</span></div></a>';
     }).join('');
   }
 
@@ -199,6 +208,85 @@
   // expose for gallery arrays if ever needed
   window.openCoartSet = openSet;
   window.openCoartLb = openLightbox;
+
+  // ---- 7b. Product detail overlay ----
+  var pdSrc = [], pdIdx = 0, pdWrap = null;
+  function getPd() {
+    if (pdWrap) return pdWrap;
+    pdWrap = document.createElement('div');
+    pdWrap.id = 'product-detail';
+    pdWrap.style.display = 'none';
+    document.body.appendChild(pdWrap);
+    return pdWrap;
+  }
+  function openDetail(id) {
+    var p = byId[id];
+    if (!p) return;
+    pdSrc = (p.images && p.images.length) ? p.images.slice() : [p.img];
+    pdIdx = 0;
+    renderDetail(p);
+  }
+  function renderDetail(p) {
+    var el = getPd();
+    var imgs = pdSrc;
+    var thumbs = imgs.length > 1
+      ? '<div class="pd-thumbs">' + imgs.map(function (src, i) {
+          return '<button class="pd-thumb' + (i === pdIdx ? ' active' : '') + '" data-i="' + i + '" style="background-image:url(\'' + esc(src) + '\')" aria-label="Image ' + (i + 1) + '"></button>';
+        }).join('') + '</div>' : '';
+    var nav = imgs.length > 1
+      ? '<button class="pd-nav prev" data-d="-1">‹</button><button class="pd-nav next" data-d="1">›</button>' : '';
+    var sub = p.subcategory || p.category_name || 'Sculpture';
+    var crumbs = p.category_name ? p.category_name + (p.subcategory && p.subcategory !== p.category_name ? ' · ' + p.subcategory : '') : sub;
+    var desc = cleanDesc(p);
+    var descHtml = desc
+      ? '<p class="pd-desc">' + esc(desc) + '</p>'
+      : '<p class="pd-desc pd-alt">Customisable size, material and finish — contact us for full details, dimensions and pricing.</p>';
+    el.innerHTML = '<div class="pd-overlay"></div><div class="pd-panel">'
+      + '<button class="pd-close" aria-label="Close">×</button>'
+      + '<div class="pd-media"><div class="pd-main">'
+      + '<img id="pd-img" src="' + esc(imgs[pdIdx]) + '" alt="' + esc(p.name) + '">' + nav + '</div>' + thumbs + '</div>'
+      + '<div class="pd-info">'
+      + '<div class="pd-cat">' + esc(crumbs) + '</div>'
+      + (p.model ? '<div class="pd-model">' + esc(p.model) + '</div>' : '')
+      + '<h2 class="pd-title">' + esc(p.name) + '</h2>'
+      + (p.price ? '<div class="pd-price">' + fmtPrice(p) + '</div>' : '')
+      + descHtml
+      + '<div class="pd-actions">'
+      + '<a class="btn btn-primary" href="' + waLink(p) + '" target="_blank" rel="noopener">Get Price on WhatsApp</a>'
+      + '<a class="btn btn-ghost" href="contact.html">Send an Enquiry</a>'
+      + '</div></div></div>';
+    el.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    el.querySelector('.pd-close').addEventListener('click', closeDetail);
+    el.querySelector('.pd-overlay').addEventListener('click', closeDetail);
+    el.querySelectorAll('.pd-thumb').forEach(function (b) {
+      b.addEventListener('click', function () { pdIdx = parseInt(b.getAttribute('data-i'), 10); syncPd(); });
+    });
+    el.querySelectorAll('.pd-nav').forEach(function (b) {
+      b.addEventListener('click', function (e) { e.stopPropagation(); pdIdx = (pdIdx + parseInt(b.getAttribute('data-d'), 10) + pdSrc.length) % pdSrc.length; syncPd(); });
+    });
+    document.getElementById('pd-img').addEventListener('click', function () { openSet(pdSrc, pdIdx); });
+    var key = function (e) {
+      if (lb && lb.style.display === 'flex') return;          // lightbox on top owns the keys
+      if (e.key === 'Escape') { closeDetail(); document.removeEventListener('keydown', key); }
+      else if (e.key === 'ArrowRight') { pdIdx = (pdIdx + 1) % pdSrc.length; syncPd(); }
+      else if (e.key === 'ArrowLeft') { pdIdx = (pdIdx - 1 + pdSrc.length) % pdSrc.length; syncPd(); }
+    };
+    document.removeEventListener('keydown', key);
+    document.addEventListener('keydown', key);
+    el._key = key;
+  }
+  function syncPd() {
+    var img = document.getElementById('pd-img');
+    if (img) img.src = pdSrc[pdIdx];
+    pdWrap.querySelectorAll('.pd-thumb').forEach(function (t, i) { t.classList.toggle('active', i === pdIdx); });
+  }
+  function closeDetail() {
+    if (!pdWrap) return;
+    pdWrap.style.display = 'none';
+    document.body.style.overflow = '';
+    if (pdWrap._key) document.removeEventListener('keydown', pdWrap._key);
+  }
 
   // ---- 8. Inquiry form (Web3Forms) ----
   var ACCESS_KEY = '53c393a4-c7b9-4f3e-8d91-a87fc7799c11';

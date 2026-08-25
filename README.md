@@ -58,7 +58,13 @@
 
 - **纯静态站**（HTML + CSS + JS），零后台、零服务器，域名除外全部免费
 - **数据驱动**：`data/products.js` → 产品卡/分类总览由 `js/main.js` 渲染（同 coartbm 模式）
-  加一款产品 → 改 `data/products.js`，或重跑构建脚本 `tools/build_pages.py`
+  加一款产品 → 改 `data/products.js`
+- **产品详情**：点击产品卡弹出详情层，显示名称/型号/价格/描述 + 多图画廊 + WhatsApp「Get Price」。
+- **加一款产品**：往 `data/products.js` 的 `products` 数组加一个对象，含
+  `id / category / name / model / price / subcategory / desc / img`；图片放到
+  `assets/images/products/<类目>/`。Metal 的子分类写 `Stainless Steel`。
+- **给产品加多角度图**：在 product 对象里加 `"images": ["...a.jpg","...b.jpg"]`，第一张为主图，即出现缩略图画廊。
+- **Metal 子分类（已无 Fire）**：Stainless Steel / Brass & Bronze / Corten Steel / Light Sculpture / Fountain
 - **图片**：从原站下载（2560px 高清，共享同公司素材，无需去水印）
 - **询盘**：Web3Forms（Access Key 在 `js/main.js`，收件同 davidchensimo@gmail.com）
   + 每个产品卡 "Get Price" → 直接打开 WhatsApp 带产品名

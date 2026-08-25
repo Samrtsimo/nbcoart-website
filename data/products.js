@@ -7,7 +7,7 @@ window.NBCOART = {
       "icon": "⚙️",
       "count": 49,
       "img": "assets/images/products/metal-sculpture/845528.jpg",
-      "tag": "Stainless · bronze · corten · light · fountain · fire"
+      "tag": "Stainless · bronze · corten · light · fountain"
     },
     {
       "id": "fiberglass-sculpture",
@@ -72,7 +72,7 @@ window.NBCOART = {
       "name": "Broken Earth Nuclear War Mushroom Cloud Peace Falling Down People Sufferer The Ruins Metal Stainless Steel Mirror Finishing Abstract Sphere Statue Sculpture",
       "model": "",
       "price": "",
-      "subcategory": "Fire",
+      "subcategory": "Stainless Steel",
       "desc": ".scd-maintenance-icon { display: flex; justify-content: center; flex-direction: column; align-items: center; gap: 2px; background: #fff; box-shadow: 0 0 16px #51627433; border-radius: 30px; width: 36p",
       "img": "assets/images/products/metal-sculpture/845528.jpg"
     },
@@ -182,7 +182,7 @@ window.NBCOART = {
       "name": "Abstract stainless steel Fire Okay Shape mirror finishing metal art sculpture",
       "model": "CAS-AS04",
       "price": "",
-      "subcategory": "Fire",
+      "subcategory": "Stainless Steel",
       "desc": "Home Home Products Products Metal Sculpture Fiberglass Sculpture Stone Sculpture Realistic Wax(Silicone) Sculpture Wood Sculpture Light Lantern Sculpture Art Furniture Art Doors Original Design Origin",
       "img": "assets/images/products/metal-sculpture/CAS-AS04.jpg"
     },
@@ -413,7 +413,7 @@ window.NBCOART = {
       "name": "Outdoor Garden Park Hotel Pool Using Abstract Brass Bronze Copper Making Rusty Autumn Fall Leaf Shape Fountain Sculpture",
       "model": "CAS-PC01",
       "price": "$ 9600.00",
-      "subcategory": "Corten Steel",
+      "subcategory": "Fountain",
       "desc": "CAS-PC01",
       "img": "assets/images/products/metal-sculpture/CAS-PC01.jpg"
     },
@@ -468,7 +468,7 @@ window.NBCOART = {
       "name": "abstract icosahedron geometry flower design corten lamp sculpture",
       "model": "CAS-AN01",
       "price": "$ 1455.00",
-      "subcategory": "Corten Steel",
+      "subcategory": "Light Sculpture",
       "desc": "CAS-AN01",
       "img": "assets/images/products/metal-sculpture/CAS-AN01.jpg"
     },
@@ -732,7 +732,7 @@ window.NBCOART = {
       "name": "Azerbaijan Turkey Friend Flag Flame Fire Hug Metal Stainless Steel Sculpture",
       "model": "CAS-AS24",
       "price": "",
-      "subcategory": "Fire",
+      "subcategory": "Stainless Steel",
       "desc": "Home Home Products Products Metal Sculpture Fiberglass Sculpture Stone Sculpture Realistic Wax(Silicone) Sculpture Wood Sculpture Light Lantern Sculpture Art Furniture Art Doors Original Design Origin",
       "img": "assets/images/products/metal-sculpture/CAS-AS24.jpg"
     },
@@ -743,7 +743,7 @@ window.NBCOART = {
       "name": "Azerbaijin Flame Tower Flag Lighting Tower Sculpture",
       "model": "CAS-AS25",
       "price": "$ 24700.00",
-      "subcategory": "Fire",
+      "subcategory": "Light Sculpture",
       "desc": "CAS-AS25",
       "img": "assets/images/products/metal-sculpture/CAS-AS25.jpg"
     },
@@ -942,8 +942,7 @@ window.NBCOART = {
       "Brass & Bronze",
       "Corten Steel",
       "Light Sculpture",
-      "Fountain",
-      "Fire"
+      "Fountain"
     ]
   },
   "production": [
