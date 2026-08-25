@@ -112,7 +112,10 @@ button { font-family: inherit; cursor: pointer; }
 .hero { position: relative; min-height: 92vh; display: flex; align-items: center; overflow: hidden; isolation: isolate; }
 .hero-bg {
   position: absolute; inset: 0; z-index: -2;
-  background-size: contain; background-repeat: no-repeat; background-position: center;
+  background-size: contain; background-repeat: no-repeat;
+  background-position: right 8% center;
+  transform: scale(0.72);
+  transform-origin: right center;
   transition: background-image 1.2s ease-in-out;
 }
 .hero::after {
