@@ -314,4 +314,22 @@
         .finally(function () { btn.disabled = false; btn.textContent = orig; });
     });
   }
+
+  // ---- 9. Notify us when a visitor downloads the e-catalogue ----
+  // Reuses the Web3Forms access key; the email inherits Web3Forms auto metadata
+  // (timestamp, IP, approximate location, browser/OS) plus our custom message.
+  var dlBtn = document.querySelector('a[download]');
+  if (dlBtn) {
+    dlBtn.addEventListener('click', function () {
+      var d = new FormData();
+      d.append('access_key', ACCESS_KEY);
+      d.append('subject', '📥 2026 e-Catalogue downloaded');
+      d.append('from_name', 'COART Website');
+      d.append('message',
+        'A visitor downloaded the 2026 COART sculpture e-catalogue PDF from nbcoart.com.\n\n' +
+        'Page: ' + location.href + '\n' +
+        'File: ' + (dlBtn.getAttribute('download') || 'Coart-Sculpture-Catalogue-2026.pdf'));
+      fetch('https://api.web3forms.com/submit', { method: 'POST', body: d }).catch(function () {});
+    });
+  }
 })();
