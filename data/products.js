@@ -1093,9 +1093,8 @@ window.NBCOART = {
       "price": "1527",
       "subcategory": "Brass",
       "desc": "Adv. size: L80xD75xH27cm (one piece) make of brass, 10mm thickness surface finishing: patina chemical treating price for 1pc maple leaf Material: Brass",
-      "img": "assets/images/products/metal%20sculpture/CAS-PC02枫叶/CAS-PC02(1).jpg",
+      "img": "assets/images/products/metal%20sculpture/CAS-PC02枫叶/CAS-PC02(2).jpg",
       "images": [
-        "assets/images/products/metal%20sculpture/CAS-PC02枫叶/CAS-PC02(1).jpg",
         "assets/images/products/metal%20sculpture/CAS-PC02枫叶/CAS-PC02(2).jpg",
         "assets/images/products/metal%20sculpture/CAS-PC02枫叶/CAS-PC02(4).jpg",
         "assets/images/products/metal%20sculpture/CAS-PC02枫叶/CAS-PC02(6).jpg"
