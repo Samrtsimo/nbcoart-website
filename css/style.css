@@ -112,7 +112,7 @@ button { font-family: inherit; cursor: pointer; }
 .hero { position: relative; min-height: 92vh; display: flex; align-items: center; overflow: hidden; isolation: isolate; }
 /* hero image sits in a right-side panel so it stays clear of the left text */
 .hero-bg {
-  position: absolute; top: 0; right: 0; bottom: 0; width: 58%; z-index: -2;
+  position: absolute; top: 0; right: 0; bottom: 0; width: 66%; z-index: -2;
   background-size: contain; background-repeat: no-repeat;
   background-position: right center;
   transition: background-image 1.2s ease-in-out;
@@ -123,7 +123,7 @@ button { font-family: inherit; cursor: pointer; }
               linear-gradient(0deg, rgba(10, 12, 16, 0.9) 0%, transparent 40%);
 }
 /* hero text: break out of the centered wrap so it hugs the left edge (near the prev arrow) */
-.hero .wrap { max-width: none; width: 100%; margin: 0; }
+.hero .wrap { max-width: none; width: 100%; margin: 0; padding-left: 100px; }
 .hero-inner { padding: 140px 0 120px; max-width: 720px; }
 .hero-h1 { font-size: clamp(40px, 6.2vw, 78px); margin: 8px 0 22px; }
 .hero-h1 em { font-style: italic; color: var(--accent); }
@@ -338,6 +338,7 @@ button { font-family: inherit; cursor: pointer; }
   .nav-cta { margin: 8px 0 0; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; }
   .hero-inner { text-align: center; }
+  .hero .wrap { padding-left: 24px; }
   .hero-bg { left: 0; width: 100%; }
   .hero-stats { margin-left: auto; margin-right: auto; justify-content: center; }
   .hero-actions { justify-content: center; }
