@@ -316,23 +316,43 @@
   }
 
   // ---- 9. Notify us when a visitor downloads the e-catalogue ----
-  // Uses a dedicated access key that delivers to foxmail. The email inherits
-  // Web3Forms auto metadata (timestamp, IP, approx location, browser/OS) plus
-  // our custom message (triggering page + PDF filename).
+  // Dedicated access key delivers to foxmail. Web3Forms stores IP/location/device
+  // in its dashboard but does NOT put them in the email body, so we capture them
+  // client-side (timestamp + browser) and look up the visitor's IP/country/city
+  // via a free geo API (ipwho.is), then include everything in the message.
   var DOWNLOAD_KEY = '26642a58-a157-4b33-9b42-d7ea32c1ecb0';
   var dlBtn = document.querySelector('a[download]');
   if (dlBtn) {
     dlBtn.addEventListener('click', function () {
-      var d = new FormData();
-      d.append('access_key', DOWNLOAD_KEY);
-      d.append('subject', '📥 2026 e-Catalogue downloaded');
-      d.append('from_name', 'COART Website');
-      d.append('from_name', 'COART Website');
-      d.append('message',
-        'A visitor downloaded the 2026 COART sculpture e-catalogue PDF from nbcoart.com.\n\n' +
-        'Page: ' + location.href + '\n' +
-        'File: ' + (dlBtn.getAttribute('download') || 'Coart-Sculpture-Catalogue-2026.pdf'));
-      fetch('https://api.web3forms.com/submit', { method: 'POST', body: d }).catch(function () {});
+      var file = dlBtn.getAttribute('download') || 'Coart-Sculpture-Catalogue-2026.pdf';
+      var when = new Date().toLocaleString();
+      function body(geo) {
+        var lines = [
+          'A visitor downloaded the 2026 COART sculpture e-catalogue PDF from nbcoart.com.',
+          'Time: ' + when,
+          'Page: ' + location.href,
+          'File: ' + file,
+          'Browser: ' + (navigator.userAgent || 'n/a')
+        ];
+        if (geo && geo.success) {
+          lines.push('IP: ' + (geo.ip || 'n/a'));
+          lines.push('Location: ' + [geo.city, geo.region, geo.country].filter(Boolean).join(', '));
+        } else {
+          lines.push('IP / Location: see Web3Forms dashboard');
+        }
+        return lines.join('\n');
+      }
+      function send(m) {
+        var d = new FormData();
+        d.append('access_key', DOWNLOAD_KEY);
+        d.append('subject', '📥 2026 e-Catalogue downloaded');
+        d.append('from_name', 'COART Website');
+        d.append('message', m);
+        fetch('https://api.web3forms.com/submit', { method: 'POST', body: d }).catch(function () {});
+      }
+      fetch('https://ipwho.is/').then(function (r) { return r.json(); })
+        .then(function (g) { send(body(g)); })
+        .catch(function () { send(body(null)); });
     });
   }
 })();
