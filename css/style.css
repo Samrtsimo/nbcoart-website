@@ -114,7 +114,7 @@ button { font-family: inherit; cursor: pointer; }
   position: absolute; inset: 0; z-index: -2;
   background-size: contain; background-repeat: no-repeat;
   background-position: right 2% center;
-  transform: scale(0.86);
+  transform: scale(0.90);
   transform-origin: right center;
   transition: background-image 1.2s ease-in-out;
 }
@@ -124,7 +124,7 @@ button { font-family: inherit; cursor: pointer; }
               linear-gradient(0deg, rgba(10, 12, 16, 0.9) 0%, transparent 40%);
 }
 /* hero text: break out of the centered wrap so it hugs the left edge (near the prev arrow) */
-.hero .wrap { max-width: none; }
+.hero .wrap { max-width: none; width: 100%; margin: 0; }
 .hero-inner { padding: 140px 0 120px; max-width: 720px; }
 .hero-h1 { font-size: clamp(40px, 6.2vw, 78px); margin: 8px 0 22px; }
 .hero-h1 em { font-style: italic; color: var(--accent); }
