@@ -316,14 +316,17 @@
   }
 
   // ---- 9. Notify us when a visitor downloads the e-catalogue ----
-  // Reuses the Web3Forms access key; the email inherits Web3Forms auto metadata
-  // (timestamp, IP, approximate location, browser/OS) plus our custom message.
+  // Uses a dedicated access key that delivers to foxmail. The email inherits
+  // Web3Forms auto metadata (timestamp, IP, approx location, browser/OS) plus
+  // our custom message (triggering page + PDF filename).
+  var DOWNLOAD_KEY = '294b7805-88e6-4892-a955-a7f0e00effe3';
   var dlBtn = document.querySelector('a[download]');
   if (dlBtn) {
     dlBtn.addEventListener('click', function () {
       var d = new FormData();
-      d.append('access_key', ACCESS_KEY);
+      d.append('access_key', DOWNLOAD_KEY);
       d.append('subject', '📥 2026 e-Catalogue downloaded');
+      d.append('from_name', 'COART Website');
       d.append('from_name', 'COART Website');
       d.append('message',
         'A visitor downloaded the 2026 COART sculpture e-catalogue PDF from nbcoart.com.\n\n' +
