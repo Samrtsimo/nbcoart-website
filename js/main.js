@@ -319,7 +319,7 @@
   // Uses a dedicated access key that delivers to foxmail. The email inherits
   // Web3Forms auto metadata (timestamp, IP, approx location, browser/OS) plus
   // our custom message (triggering page + PDF filename).
-  var DOWNLOAD_KEY = '294b7805-88e6-4892-a955-a7f0e00effe3';
+  var DOWNLOAD_KEY = '26642a58-a157-4b33-9b42-d7ea32c1ecb0';
   var dlBtn = document.querySelector('a[download]');
   if (dlBtn) {
     dlBtn.addEventListener('click', function () {
