@@ -110,12 +110,11 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ============================ HERO ============================ */
 .hero { position: relative; min-height: 92vh; display: flex; align-items: center; overflow: hidden; isolation: isolate; }
+/* hero image sits in a right-side panel so it stays clear of the left text */
 .hero-bg {
-  position: absolute; inset: 0; z-index: -2;
+  position: absolute; top: 0; right: 0; bottom: 0; width: 58%; z-index: -2;
   background-size: contain; background-repeat: no-repeat;
-  background-position: right 2% center;
-  transform: scale(0.90);
-  transform-origin: right center;
+  background-position: right center;
   transition: background-image 1.2s ease-in-out;
 }
 .hero::after {
@@ -339,6 +338,7 @@ button { font-family: inherit; cursor: pointer; }
   .nav-cta { margin: 8px 0 0; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; }
   .hero-inner { text-align: center; }
+  .hero-bg { left: 0; width: 100%; }
   .hero-stats { margin-left: auto; margin-right: auto; justify-content: center; }
   .hero-actions { justify-content: center; }
   .hero-nav.prev { left: 12px; } .hero-nav.next { right: 12px; }
