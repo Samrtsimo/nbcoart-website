@@ -68,8 +68,8 @@ window.NBCOART = {
       "name": "Water Playground Equipment",
       "page": "water-playground-equipment.html",
       "icon": "💦",
-      "count": 1,
-      "img": "assets/images/products/water%20playground%20equipment/Water%20Playground/21.jpg",
+      "count": 14,
+      "img": "assets/images/products/water%20playground%20equipment/CAS-WP01/21.jpg",
       "tag": "Stainless steel · water play"
     }
   ],
@@ -1514,32 +1514,201 @@ window.NBCOART = {
       ]
     },
     {
-      "id": "Water Playground",
+      "id": "CAS-WP01",
       "category": "water-playground-equipment",
       "category_name": "Water Playground Equipment",
       "name": "Water Playground Equipment",
-      "model": "Water Playground",
+      "model": "CAS-WP01",
       "price": "",
       "subcategory": "",
       "desc": "Customisable size, material and finish — contact us for full details.",
-      "img": "assets/images/products/water%20playground%20equipment/Water%20Playground/21.jpg",
+      "img": "assets/images/products/water%20playground%20equipment/CAS-WP01/21.jpg",
       "images": [
-        "assets/images/products/water%20playground%20equipment/Water%20Playground/21.jpg",
-        "assets/images/products/water%20playground%20equipment/Water%20Playground/22.jpg",
-        "assets/images/products/water%20playground%20equipment/Water%20Playground/23.jpg",
-        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_01.jpg",
-        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_02.jpg",
-        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_03.jpg",
-        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_04.jpg",
-        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_05.jpg",
-        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_06.jpg",
-        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_07.jpg",
-        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_08.jpg",
-        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_09.jpg",
-        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_10.jpg",
-        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_11.jpg",
-        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_12.jpg",
-        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_13.jpg"
+        "assets/images/products/water%20playground%20equipment/CAS-WP01/21.jpg",
+        "assets/images/products/water%20playground%20equipment/CAS-WP01/22.jpg",
+        "assets/images/products/water%20playground%20equipment/CAS-WP01/23.jpg"
+      ]
+    },
+    {
+      "id": "CAS-WP02",
+      "category": "water-playground-equipment",
+      "category_name": "Water Playground Equipment",
+      "name": "Water Play Collection",
+      "model": "CAS-WP02",
+      "price": "",
+      "subcategory": "",
+      "desc": "Customisable size, material and finish — contact us for full details.",
+      "img": "assets/images/products/water%20playground%20equipment/CAS-WP02/旺小牛产品画册_页面_01.jpg",
+      "images": [
+        "assets/images/products/water%20playground%20equipment/CAS-WP02/旺小牛产品画册_页面_01.jpg"
+      ]
+    },
+    {
+      "id": "CAS-WP03",
+      "category": "water-playground-equipment",
+      "category_name": "Water Playground Equipment",
+      "name": "Water Trough Series",
+      "model": "CAS-WP03",
+      "price": "",
+      "subcategory": "",
+      "desc": "Customisable size, material and finish — contact us for full details.",
+      "img": "assets/images/products/water%20playground%20equipment/CAS-WP03/旺小牛产品画册_页面_02.jpg",
+      "images": [
+        "assets/images/products/water%20playground%20equipment/CAS-WP03/旺小牛产品画册_页面_02.jpg"
+      ]
+    },
+    {
+      "id": "CAS-WP04",
+      "category": "water-playground-equipment",
+      "category_name": "Water Playground Equipment",
+      "name": "Water Pump Series",
+      "model": "CAS-WP04",
+      "price": "",
+      "subcategory": "",
+      "desc": "Customisable size, material and finish — contact us for full details.",
+      "img": "assets/images/products/water%20playground%20equipment/CAS-WP04/旺小牛产品画册_页面_03.jpg",
+      "images": [
+        "assets/images/products/water%20playground%20equipment/CAS-WP04/旺小牛产品画册_页面_03.jpg"
+      ]
+    },
+    {
+      "id": "CAS-WP05",
+      "category": "water-playground-equipment",
+      "category_name": "Water Playground Equipment",
+      "name": "Water Gun Series",
+      "model": "CAS-WP05",
+      "price": "",
+      "subcategory": "",
+      "desc": "Customisable size, material and finish — contact us for full details.",
+      "img": "assets/images/products/water%20playground%20equipment/CAS-WP05/旺小牛产品画册_页面_04.jpg",
+      "images": [
+        "assets/images/products/water%20playground%20equipment/CAS-WP05/旺小牛产品画册_页面_04.jpg"
+      ]
+    },
+    {
+      "id": "CAS-WP06",
+      "category": "water-playground-equipment",
+      "category_name": "Water Playground Equipment",
+      "name": "Water Wheel Bowl Series",
+      "model": "CAS-WP06",
+      "price": "",
+      "subcategory": "",
+      "desc": "Customisable size, material and finish — contact us for full details.",
+      "img": "assets/images/products/water%20playground%20equipment/CAS-WP06/旺小牛产品画册_页面_05.jpg",
+      "images": [
+        "assets/images/products/water%20playground%20equipment/CAS-WP06/旺小牛产品画册_页面_05.jpg"
+      ]
+    },
+    {
+      "id": "CAS-WP07",
+      "category": "water-playground-equipment",
+      "category_name": "Water Playground Equipment",
+      "name": "Water Press Series",
+      "model": "CAS-WP07",
+      "price": "",
+      "subcategory": "",
+      "desc": "Customisable size, material and finish — contact us for full details.",
+      "img": "assets/images/products/water%20playground%20equipment/CAS-WP07/旺小牛产品画册_页面_06.jpg",
+      "images": [
+        "assets/images/products/water%20playground%20equipment/CAS-WP07/旺小牛产品画册_页面_06.jpg"
+      ]
+    },
+    {
+      "id": "CAS-WP08",
+      "category": "water-playground-equipment",
+      "category_name": "Water Playground Equipment",
+      "name": "Water Windmill Series",
+      "model": "CAS-WP08",
+      "price": "",
+      "subcategory": "",
+      "desc": "Customisable size, material and finish — contact us for full details.",
+      "img": "assets/images/products/water%20playground%20equipment/CAS-WP08/旺小牛产品画册_页面_07.jpg",
+      "images": [
+        "assets/images/products/water%20playground%20equipment/CAS-WP08/旺小牛产品画册_页面_07.jpg"
+      ]
+    },
+    {
+      "id": "CAS-WP09",
+      "category": "water-playground-equipment",
+      "category_name": "Water Playground Equipment",
+      "name": "Water Bicycle Series",
+      "model": "CAS-WP09",
+      "price": "",
+      "subcategory": "",
+      "desc": "Customisable size, material and finish — contact us for full details.",
+      "img": "assets/images/products/water%20playground%20equipment/CAS-WP09/旺小牛产品画册_页面_08.jpg",
+      "images": [
+        "assets/images/products/water%20playground%20equipment/CAS-WP09/旺小牛产品画册_页面_08.jpg"
+      ]
+    },
+    {
+      "id": "CAS-WP10",
+      "category": "water-playground-equipment",
+      "category_name": "Water Playground Equipment",
+      "name": "Other Play Items Series",
+      "model": "CAS-WP10",
+      "price": "",
+      "subcategory": "",
+      "desc": "Customisable size, material and finish — contact us for full details.",
+      "img": "assets/images/products/water%20playground%20equipment/CAS-WP10/旺小牛产品画册_页面_09.jpg",
+      "images": [
+        "assets/images/products/water%20playground%20equipment/CAS-WP10/旺小牛产品画册_页面_09.jpg"
+      ]
+    },
+    {
+      "id": "CAS-WP11",
+      "category": "water-playground-equipment",
+      "category_name": "Water Playground Equipment",
+      "name": "Water Play Combo Series",
+      "model": "CAS-WP11",
+      "price": "",
+      "subcategory": "",
+      "desc": "Customisable size, material and finish — contact us for full details.",
+      "img": "assets/images/products/water%20playground%20equipment/CAS-WP11/旺小牛产品画册_页面_10.jpg",
+      "images": [
+        "assets/images/products/water%20playground%20equipment/CAS-WP11/旺小牛产品画册_页面_10.jpg"
+      ]
+    },
+    {
+      "id": "CAS-WP12",
+      "category": "water-playground-equipment",
+      "category_name": "Water Playground Equipment",
+      "name": "Water Channel Combo Series",
+      "model": "CAS-WP12",
+      "price": "",
+      "subcategory": "",
+      "desc": "Customisable size, material and finish — contact us for full details.",
+      "img": "assets/images/products/water%20playground%20equipment/CAS-WP12/旺小牛产品画册_页面_11.jpg",
+      "images": [
+        "assets/images/products/water%20playground%20equipment/CAS-WP12/旺小牛产品画册_页面_11.jpg"
+      ]
+    },
+    {
+      "id": "CAS-WP13",
+      "category": "water-playground-equipment",
+      "category_name": "Water Playground Equipment",
+      "name": "Playground Combo Series",
+      "model": "CAS-WP13",
+      "price": "",
+      "subcategory": "",
+      "desc": "Customisable size, material and finish — contact us for full details.",
+      "img": "assets/images/products/water%20playground%20equipment/CAS-WP13/旺小牛产品画册_页面_12.jpg",
+      "images": [
+        "assets/images/products/water%20playground%20equipment/CAS-WP13/旺小牛产品画册_页面_12.jpg"
+      ]
+    },
+    {
+      "id": "CAS-WP14",
+      "category": "water-playground-equipment",
+      "category_name": "Water Playground Equipment",
+      "name": "Water Park Combo Series",
+      "model": "CAS-WP14",
+      "price": "",
+      "subcategory": "",
+      "desc": "Customisable size, material and finish — contact us for full details.",
+      "img": "assets/images/products/water%20playground%20equipment/CAS-WP14/旺小牛产品画册_页面_13.jpg",
+      "images": [
+        "assets/images/products/water%20playground%20equipment/CAS-WP14/旺小牛产品画册_页面_13.jpg"
       ]
     },
     {
