@@ -62,6 +62,15 @@ window.NBCOART = {
       "count": 7,
       "img": "assets/images/products/Art%20Furniture/CAS-JC01水纹桌/1.jpg",
       "tag": "Bespoke · sculptural"
+    },
+    {
+      "id": "water-playground-equipment",
+      "name": "Water Playground Equipment",
+      "page": "water-playground-equipment.html",
+      "icon": "💦",
+      "count": 1,
+      "img": "assets/images/products/water%20playground%20equipment/Water%20Playground/21.jpg",
+      "tag": "Stainless steel · water play"
     }
   ],
   "products": [
@@ -496,7 +505,7 @@ window.NBCOART = {
       "id": "CAS-AS16",
       "category": "metal-sculpture",
       "category_name": "Metal Sculpture",
-      "name": "Sculpture",
+      "name": "CAS-AS16 Sculpture",
       "model": "CAS-AS16",
       "price": "6682",
       "subcategory": "Stainless Steel",
@@ -1040,7 +1049,7 @@ window.NBCOART = {
       "id": "CAS-FC02",
       "category": "metal-sculpture",
       "category_name": "Metal Sculpture",
-      "name": "Sculpture",
+      "name": "CAS-FC02 Sculpture",
       "model": "CAS-FC02",
       "price": "3068",
       "subcategory": "Brass",
@@ -1502,6 +1511,35 @@ window.NBCOART = {
       "img": "assets/images/products/light-lantern-sculpture/CAS-PL02.jpg",
       "images": [
         "assets/images/products/light-lantern-sculpture/CAS-PL02.jpg"
+      ]
+    },
+    {
+      "id": "Water Playground",
+      "category": "water-playground-equipment",
+      "category_name": "Water Playground Equipment",
+      "name": "Water Playground Equipment",
+      "model": "Water Playground",
+      "price": "",
+      "subcategory": "",
+      "desc": "Customisable size, material and finish — contact us for full details.",
+      "img": "assets/images/products/water%20playground%20equipment/Water%20Playground/21.jpg",
+      "images": [
+        "assets/images/products/water%20playground%20equipment/Water%20Playground/21.jpg",
+        "assets/images/products/water%20playground%20equipment/Water%20Playground/22.jpg",
+        "assets/images/products/water%20playground%20equipment/Water%20Playground/23.jpg",
+        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_01.jpg",
+        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_02.jpg",
+        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_03.jpg",
+        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_04.jpg",
+        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_05.jpg",
+        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_06.jpg",
+        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_07.jpg",
+        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_08.jpg",
+        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_09.jpg",
+        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_10.jpg",
+        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_11.jpg",
+        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_12.jpg",
+        "assets/images/products/water%20playground%20equipment/Water%20Playground/旺小牛产品画册_页面_13.jpg"
       ]
     },
     {

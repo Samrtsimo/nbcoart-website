@@ -315,20 +315,23 @@
     });
   }
 
-  // ---- 9. Notify us when a visitor downloads the e-catalogue ----
+  // ---- 9. Notify us when a visitor downloads an e-catalogue ----
   // Dedicated access key delivers to foxmail. Web3Forms stores IP/location/device
   // in its dashboard but does NOT put them in the email body, so we capture them
   // client-side (timestamp + browser) and look up the visitor's IP/country/city
   // via a free geo API (ipwho.is), then include everything in the message.
+  // Multiple download buttons supported; per-button intro/subject via
+  // data-intro / data-subject attributes (defaults keep the 2026 catalogue mail).
   var DOWNLOAD_KEY = '26642a58-a157-4b33-9b42-d7ea32c1ecb0';
-  var dlBtn = document.querySelector('a[download]');
-  if (dlBtn) {
+  document.querySelectorAll('a[download]').forEach(function (dlBtn) {
     dlBtn.addEventListener('click', function () {
       var file = dlBtn.getAttribute('download') || 'Coart-Sculpture-Catalogue-2026.pdf';
+      var intro = dlBtn.getAttribute('data-intro') || 'A visitor downloaded the 2026 COART sculpture e-catalogue PDF from nbcoart.com.';
+      var subject = dlBtn.getAttribute('data-subject') || '📥 2026 e-Catalogue downloaded';
       var when = new Date().toLocaleString();
       function body(geo) {
         var lines = [
-          'A visitor downloaded the 2026 COART sculpture e-catalogue PDF from nbcoart.com.',
+          intro,
           'Time: ' + when,
           'Page: ' + location.href,
           'File: ' + file,
@@ -345,7 +348,7 @@
       function send(m) {
         var d = new FormData();
         d.append('access_key', DOWNLOAD_KEY);
-        d.append('subject', '📥 2026 e-Catalogue downloaded');
+        d.append('subject', subject);
         d.append('from_name', 'COART Website');
         d.append('message', m);
         fetch('https://api.web3forms.com/submit', { method: 'POST', body: d }).catch(function () {});
@@ -354,5 +357,5 @@
         .then(function (g) { send(body(g)); })
         .catch(function () { send(body(null)); });
     });
-  }
+  });
 })();
